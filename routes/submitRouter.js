@@ -33,7 +33,7 @@ submitRouter.post("/", (req,res,next) => {
       For: ${req.body.firstName} ${req.body.lastName}
       Email: ${req.body.email}
       Phone: ${req.body.phone}
-      Address: ${req.body.address}
+      Location: ${req.body.location}
       Message:
       ${req.body.message}`
   }
