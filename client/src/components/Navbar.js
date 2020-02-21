@@ -7,9 +7,9 @@ export default function Navbar(props){
     return(
         <div className="navbar">
             <Link to="/">Home</Link>
-            <Link to="/RepSheet">Rep Sheet</Link>
-            <Link to="/public">Public Domain</Link>
-            <Link to="/files">Rep Files</Link>
+            <Link to="/Proposals">Rep Sheet</Link>
+            <Link to="/Public">Public Domain</Link>
+            <Link to="/Files">Rep Files</Link>
             <button onClick={logout}>Logout</button>
         </div>
     )

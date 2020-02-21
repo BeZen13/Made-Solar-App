@@ -15,11 +15,12 @@ export default function App(){
                     render={() => token ? <Redirect to="/Home" /> : <Auth/>}
                 />
                 <Route
-                    path="/RepSheet"
-                    render={() => <RepSheet />}
+                    path="/Proposals"
+                    render={() => token ? <Redirect to="/Proposals"  />: <Auth />}
                 />
                 <Route
-                    path=""
+                    path="/Files"
+                    render={() => token ? <Redirect to="/Files" /> : <Auth />}
                 />
             </Switch>
         </div>

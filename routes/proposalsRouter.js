@@ -1,6 +1,6 @@
 const express = require('express')
 const proposalsRouter = express.Router()
-const Proposals = require('../models/proposalSheet.js')
+const Proposals = require('../models/proposalsSheet.js')
 
 //get all Sheets
 proposalsRouter.get("/", (req, res, next) => {
@@ -25,7 +25,7 @@ proposalsRouter.get("/user", (req, res, next) => {
 })
 
 //add Proposal
-proposalRouter.post("/", (req, res, next) => {
+proposalsRouter.post("/", (req, res, next) => {
     req.body.user = req.user._id
     const newProposal = new Proposals(req.body)
     newProposal.save((err, savedProposal) => {
@@ -38,7 +38,7 @@ proposalRouter.post("/", (req, res, next) => {
 })
 
 //delete proposal
-proposalRouter.delete("/:proposalsId", (req, res, next) => {
+proposalsRouter.delete("/:proposalsId", (req, res, next) => {
     Proposals.findOneAndDelete(
         { _id: req.params.proposalsId, user: req.user._id },
         (err, deletedProposal) => {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 
@@ -81,7 +81,7 @@ const PhoneInput = styled(TextInput)`
   @media (${props => props.theme.media.desktopLarge}) {
   }
 `;
-const Address = styled(TextInput)`
+const LocationInput = styled(TextInput)`
   @media (${props => props.theme.media.mobile}) {
   }
   @media (${props => props.theme.media.tabletPortrait}) {
@@ -178,6 +178,61 @@ function RepSheet(props) {
     }
 
     const handleSubmit = e => {
-        
+        e.preventDefault()
+        sendProposal()
+        resetFirstName()
+        resetLastName()
+        resetEmail()
+        resetPhone()
+        resetLocation()
+        resetMessage()
     }
+
+    return(
+        <FormBody onSubmit={ handleSubmit }>
+            <FirstNameInput
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                { ...bindFirstName }
+                required
+            />
+            <LastNameInput
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                { ...bindLastName }
+            />
+            <EmailInput
+                type="email"
+                name="email"
+                placeholder="Email"
+                { ...bindEmail }
+                required
+            />
+            <PhoneInput
+                type="phone"
+                name="phone"
+                placeholder="Phone"
+                { ...bindPhone }
+                required
+            />
+            <LocationInput
+                type="text"
+                name="location"
+                placeholder="Location"
+                { ...bindLocation }
+                required
+            />
+            <MessageInput
+                type="body"
+                name="message"
+                placeholder="Added Info..."
+                { ...bindMessage }
+            />
+            <SendButton type="submit">Submit</SendButton>
+        </FormBody>
+    )
 }
+
+export default ProposalForm

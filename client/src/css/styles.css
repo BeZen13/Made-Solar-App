@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: sans-serif;
+    outline: none;
+    text-decoration: none;
+}
+
+.app{
+    background-color: skyblue;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    background-color: slateblue;
+}
+
+.auth-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.auth-container > h1{
+    font-size: 2em;
+    margin: 24px;
+}
+
+.auth-container > form {
+    border: 1px solid purple;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: lightcoral;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-container > form > input {
+    margin: 16px 8px;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.auth-container > form > button {
+    margin: 16px 8px;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+
+.public{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.profile > h1{
+    margin: 8px;
+    font-size: 2em;
+    text-align: center;
+}
+
+.profile > h3{
+    margin: 16px;
+    text-decoration: underline;
+}
+
+.profile > form{
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0;
+    border: 1px solid purple;
+    background-color: slateblue;
+    padding: 16px;
+    border-radius: 5px;
+}
+
+.profile > form > input,
+.profile > form > button {
+    margin: 8px 0;
+    padding: 8px;
+    border-radius: 5px;
+}
