@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 
-import { useInput } from '../hooks/inputHook'
+import { useInput } from '../hooks/inputHook.js'
 import {
     Form,
     TextInput,
     TextArea,
     Submit
-} from './components/styledComponents/formStyles.js'
+} from './styledComponents/formStyles.js'
 
 const FormBody = styled(Form)`
     margin: auto;
@@ -146,12 +146,12 @@ function RepSheet(props) {
         value: location,
         bind: bindLocation,
         reset: resetLocation
-    }
+    } = useInput("")
     const {
         value: message,
         bind: bindMessage,
         reset: resetMessage
-    }
+    } = useInput("")
 
     const inputs = {
         firstName,
@@ -235,4 +235,4 @@ function RepSheet(props) {
     )
 }
 
-export default ProposalForm
+export default RepSheet

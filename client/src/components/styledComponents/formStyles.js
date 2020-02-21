@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Form = styled.form`
   display: flex;
@@ -73,4 +73,4 @@ font-weight: bold;
 :focus {
   background-color: rgba(0,0,0,0.5);
 }
-`;
+`

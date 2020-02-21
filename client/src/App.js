@@ -1,6 +1,13 @@
 import React, { useContext } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import Navbar from './components/Navbar.js'
+import { UserContext } from './context/UserProvider.js'
+import Auth from './components/Auth.js'
+import Home from './components/Home.js'
+import Proposals from './components/Proposals.js'
+import Files from './components/Files.js'
+
+
 
 
 export default function App(){
@@ -16,11 +23,11 @@ export default function App(){
                 />
                 <Route
                     path="/Proposals"
-                    render={() => token ? <Redirect to="/Proposals"  />: <Auth />}
+                    render={() => <Proposals />}
                 />
                 <Route
                     path="/Files"
-                    render={() => token ? <Redirect to="/Files" /> : <Auth />}
+                    render={() => <Files />}
                 />
             </Switch>
         </div>

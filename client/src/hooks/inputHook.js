@@ -1,17 +1,17 @@
 import { useState } from 'react'
 //attempt to make a custom hook!
 
-export const useInput = initialVal => {
-    const [ value, setValue ] = useState(initialVal)
+export const useInput = initialValue => {
+    const [ value, setValue ] = useState(initialValue)
 
     return{
         value,
         setValue,
-        reset: () => setVal(""),
+        reset: () => setValue(""),
         bind: {
             value,
             onChange: e => {
-                setVal(e.target.value)
+                setValue(e.target.value)
             }
         }
     }

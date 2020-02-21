@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import axios from 'axios'
-import { ProposalContext } from '/context/ProposalContext.js'
+import { ProposalContext } from '../context/ProposalProvider.js'
 
 export const UserContext = React.createContext()
 
@@ -51,6 +51,16 @@ export default function UserProvider(props){
                 }))
             })
             .catch(err => console.log(err.response.data.errMsg))
+    }
+
+
+    function logout(){
+        localStorage.removeItem("token")
+        localStorage.removeItem("user")
+        setUserState({
+            user: {},
+            token: "",
+        })
     }
 
     return(

@@ -9,7 +9,7 @@ export default function ProposalProvider(props){
     const initState = {
         proposals: []
     }
-    const [ propState, setPropState ] = userState(initState)
+    const [ propState, setPropState ] = useState(initState)
 
     function getUserProposals(){
         proposalAxios.get("api/proposal/user")
@@ -25,9 +25,9 @@ export default function ProposalProvider(props){
     function addProposal(newProposal){
         proposalAxios.post("api/proposal", newProposal)
             .then(res => {
-                setProposalState(res => ({
-                    ...prevState,
-                    proposals: [...[prevState.proposals, res.data]]
+                setPropState(prevPropState => ({
+                    ...prevPropState,
+                    proposals: [...[prevPropState.proposals, res.data]]
                 }))
             })
             .catch(err => console.log(err.response.data.errMsg))
