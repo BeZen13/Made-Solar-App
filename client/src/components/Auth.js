@@ -29,14 +29,14 @@ export default function Auth(){
     }
 
     return(
-        <div className="auth-cont">
+        <div className="auth-container">
             <h1>Welcome to the Made-Solar App</h1>
             { !toggle ?
                 <>
                     <AuthForm
                         handleChange={ handleChange }
                         handleSubmit={ handleSignup }
-                        inputs={ inputs }
+                        inputs={inputs}
                         btnText="Sign Up"
                     />
                     <p onClick={() => setToggle(prev => !prev)}>Already a Member?</p>
@@ -46,7 +46,7 @@ export default function Auth(){
                     <AuthForm 
                         handleChange={ handleChange }
                         handleSubmit={ handleLogin }
-                        inputs={ inputs }
+                        inputs={inputs}
                         btnText="Login"
                     />
                     <p onClick={() => setToggle(prev => !prev)}>Not a Member Yet?</p> 

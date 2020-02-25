@@ -29,6 +29,10 @@ export default function App(){
                     path="/Files"
                     render={() => <Files />}
                 />
+                <Route
+                    path="/Home"
+                    render={() => <Home />}
+                />
             </Switch>
         </div>
     )

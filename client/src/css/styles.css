@@ -54,37 +54,9 @@
 }
 
 
-.public{
+.home{
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
-}
-
-.profile > h1{
-    margin: 8px;
-    font-size: 2em;
-    text-align: center;
-}
-
-.profile > h3{
-    margin: 16px;
-    text-decoration: underline;
-}
-
-.profile > form{
-    display: flex;
-    flex-direction: column;
-    margin: 16px 0;
-    border: 1px solid purple;
-    background-color: slateblue;
-    padding: 16px;
-    border-radius: 5px;
-}
-
-.profile > form > input,
-.profile > form > button {
-    margin: 8px 0;
-    padding: 8px;
-    border-radius: 5px;
 }
