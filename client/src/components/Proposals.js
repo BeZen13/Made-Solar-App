@@ -36,11 +36,17 @@ function RepSheet(props) {
         bind: bindMessage,
         reset: resetMessage
     } = useInput("")
+    const {
+        value: subject,
+        bind: bindSubject,
+        reset: resetSubject
+    } = useInput("")
 
     const inputs = {
         firstName,
         lastName,
         email,
+        subject,
         phone,
         location,
         message
@@ -70,6 +76,7 @@ function RepSheet(props) {
         resetPhone()
         resetLocation()
         resetMessage()
+        resetSubject()
     }
 
     return(
@@ -95,6 +102,13 @@ function RepSheet(props) {
                 required
             />
             <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                { ...bindSubject }
+                required
+            />
+            <input
                 type="phone"
                 name="phone"
                 placeholder="Phone"
@@ -116,6 +130,7 @@ function RepSheet(props) {
             />
             <button type="submit">Submit</button>
         </form>
+
     )
 }
 

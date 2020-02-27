@@ -18,6 +18,9 @@ const proposalsSchema = new Schema({
         type: String,
         required: true
     },
+    subject: {
+        type: String
+    },
     phone: {
         type: Number,
         required: true

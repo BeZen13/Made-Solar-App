@@ -28,7 +28,7 @@ submitRouter.post("/", (req,res,next) => {
   const mail = {
     for: `${req.body.firstName} ${req.body.lastName} <${req.body.email}>`,
     to: `betzendevs@gmail.com`,
-    subject: `NEW MESSAGE via Made-Solar-App Contact Form. Subject: ${req.body.lastName}`,
+    subject: `NEW MESSAGE via Made-Solar-App Proposal Form. Subject: ${req.body.subject}`,
     text: `
       For: ${req.body.firstName} ${req.body.lastName}
       Email: ${req.body.email}
