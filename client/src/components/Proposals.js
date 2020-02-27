@@ -1,16 +1,18 @@
 import React from 'react'
-import styled from 'styled-components'
+//import styled from 'styled-components'
 import axios from 'axios'
 
 import { useInput } from '../hooks/inputHook.js'
-import {
+/*import {
     Form,
     TextInput,
     TextArea,
     Submit
-} from './styledComponents/formStyles.js'
+} from './styledComponents/formStyles.js'*/
 
-const FormBody = styled(Form)`
+
+
+/*const FormBody = styled(Form)`
     margin: auto;
     width: 100%;
     display: grid;
@@ -119,7 +121,7 @@ const SendButton = styled(Submit)`
   }
   @media (${props => props.theme.media.desktopLarge}) {
   }
-`;
+`;*/
 
 function RepSheet(props) {
     const {
@@ -189,49 +191,49 @@ function RepSheet(props) {
     }
 
     return(
-        <FormBody onSubmit={ handleSubmit }>
-            <FirstNameInput
+        <form className="propForm" onSubmit={ handleSubmit }>
+            <input
                 type="text"
                 name="firstName"
                 placeholder="First Name"
                 { ...bindFirstName }
                 required
             />
-            <LastNameInput
+            <input
                 type="text"
                 name="lastName"
                 placeholder="Last Name"
                 { ...bindLastName }
             />
-            <EmailInput
+            <input
                 type="email"
                 name="email"
                 placeholder="Email"
                 { ...bindEmail }
                 required
             />
-            <PhoneInput
+            <input
                 type="phone"
                 name="phone"
                 placeholder="Phone"
                 { ...bindPhone }
                 required
             />
-            <LocationInput
+            <input
                 type="text"
                 name="location"
                 placeholder="Location"
                 { ...bindLocation }
                 required
             />
-            <MessageInput
+            <input
                 type="body"
                 name="message"
                 placeholder="Added Info..."
                 { ...bindMessage }
             />
-            <SendButton type="submit">Submit</SendButton>
-        </FormBody>
+            <button type="submit">Submit</button>
+        </form>
     )
 }
 

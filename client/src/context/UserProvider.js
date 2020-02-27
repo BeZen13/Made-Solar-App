@@ -38,7 +38,7 @@ export default function UserProvider(props){
     }
     
     function login(credentials){
-        axios.post("auth/login", credentials)
+        axios.post("/auth/login", credentials)
             .then(res => {
                 const { user, token } = res.data
                 localStorage.setItem("token", token)

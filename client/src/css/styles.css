@@ -54,6 +54,40 @@
 }
 
 
+.propForm{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.propForm > h1{
+    font-size: 2em;
+    margin: 24px;
+}
+
+.propForm > form {
+    border: 1px solid purple;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: lightcoral;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.propForm > form > input {
+    margin: 16px 8px;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.propForm > form > button {
+    margin: 16px 8px;
+    padding: 8px;
+    border-radius: 4px;
+}
+
 .home{
     display: flex;
     flex-direction: column;
