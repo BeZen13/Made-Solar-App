@@ -9,6 +9,7 @@ export default function Navbar(props){
             <Link to="/proposals">Rep Sheet</Link>
             <Link to="/home">Public Domain</Link>
             <Link to="/files">Rep Files</Link>
+            <Link to="/LeadTracker">Lead Tracker</Link>
             <button onClick={logout}>Logout</button>
         </div>
     )

@@ -33,6 +33,10 @@ export default function App(){
                     path="/Home"
                     render={() => <Home />}
                 />
+                <Route
+                    path="/LeadTracker"
+                    render={() => <Home />}
+                />
             </Switch>
         </div>
     )
