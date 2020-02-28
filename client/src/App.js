@@ -6,6 +6,7 @@ import Auth from './components/Auth.js'
 import Home from './components/Home.js'
 import Proposals from './components/Proposals.js'
 import Files from './components/Files.js'
+import LeadTracker from './components/LeadTracker.js'
 
 
 
@@ -35,7 +36,7 @@ export default function App(){
                 />
                 <Route
                     path="/LeadTracker"
-                    render={() => <Home />}
+                    render={() => <LeadTracker />}
                 />
             </Switch>
         </div>

@@ -18,6 +18,7 @@ export default function UserProvider(props){
     const initState = {
         user: JSON.parse(localStorage.getItem("user")) || {},
         token: localStorage.getItem("token") || "",
+        leads: []
     }
 
     const [ userState, setUserState ] = useState(initState)
@@ -44,6 +45,7 @@ export default function UserProvider(props){
                 localStorage.setItem("token", token)
                 localStorage.setItem("user", JSON.stringify(user))
                 getUserProposals()
+                getUserLeads()
                 setUserState(prevUserState => ({
                     ...prevUserState,
                     user,
@@ -60,8 +62,32 @@ export default function UserProvider(props){
         setUserState({
             user: {},
             token: "",
+            leads: []
         })
     }
+   
+    function getUserLeads(){
+        userAxios.get("/api/leads/user")
+            .then(res => {
+                setUserState(prevUserState => ({
+                    ...prevUserState,
+                    leads: res.data
+                }))
+            })
+            .catch(err => console.log(err.response.data.errMsg))
+    }
+
+    function addLead(newLead){
+        userAxios.post("/api/leads", newIssue)
+            .then(res => {
+                setUserState(prevState => ({
+                    ...prevState,
+                    leads: [...prevState.leads, res.data]
+                }))
+            })
+            .catch(err => console.log(err.response.data.errMsg))
+    }
+
 
     return(
         <UserContext.Provider   
@@ -69,7 +95,8 @@ export default function UserProvider(props){
                 ...userState,
                 signup,
                 login,
-                logout
+                logout,
+                addLead
             }}>
                 { props.children }
             </UserContext.Provider>
