@@ -6,7 +6,7 @@ const initLeadInputs = {
 }
 
 export default function LeadForm(props){
-    const [ inputs, setInputs ] = useState(initInputs)
+    const [ inputs, setInputs ] = useState(initLeadInputs)
     const { addLead } = props
 
     function handleChange(e){
@@ -20,7 +20,7 @@ export default function LeadForm(props){
     function handleSubmit(e){
         e.preventDefault()
         addLead(inputs)
-        setInputs(initInputs)
+        setInputs(initLeadInputs)
     }
     
     const { name, phone } = inputs

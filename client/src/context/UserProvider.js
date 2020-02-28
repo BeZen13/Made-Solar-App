@@ -78,7 +78,7 @@ export default function UserProvider(props){
     }
 
     function addLead(newLead){
-        userAxios.post("/api/leads", newIssue)
+        userAxios.post("/api/lead", newLead)
             .then(res => {
                 setUserState(prevState => ({
                     ...prevState,

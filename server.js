@@ -23,7 +23,7 @@ app.use("/send", require("./routes/submitRouter"));
 
 app.use('/auth', require('./routes/authRouter.js'))
 app.use('/api', expressJwt({ secret: process.env.SECRET })) //req.user
-app.use('/api/leads', require('./routes/leadsRouter.js'))
+app.use('/api/lead', require('./routes/leadsRouter.js'))
 app.use('/api/proposal', require('./routes/proposalsRouter.js'))
 
 app.use((err, req, res, next) => {

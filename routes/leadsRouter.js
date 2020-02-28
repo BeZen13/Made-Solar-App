@@ -1,6 +1,6 @@
 const express = require('express')
 const leadsRouter = express.Router()
-const Leads = require('../models/Lead.js')
+const Leads = require('../models/Leads.js')
 
 //get All Leads
 
@@ -28,7 +28,7 @@ leadsRouter.get("/user", (req, res, next) => {
 
 //add new lead
 
-leadsRoouter.post("/", (req, res, next) => {
+leadsRouter.post("/", (req, res, next) => {
     req.body.user = req.user._id
     const newLead = new Leads(req.body)
     newLead.save((err, savedLead) => {
