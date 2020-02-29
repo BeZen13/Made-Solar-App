@@ -28,6 +28,11 @@ export default function Auth(){
         login(inputs)
     }
 
+    function toggleForm(){
+        setToggle(prev => !prev)
+        resetAuthErr()
+    }
+
     return(
         <div className="auth-container">
             <h1>Welcome to the Made-Solar App</h1>
@@ -38,8 +43,9 @@ export default function Auth(){
                         handleSubmit={ handleSignup }
                         inputs={inputs}
                         btnText="Sign Up"
+                        errMsg={errMsg}
                     />
-                    <p onClick={() => setToggle(prev => !prev)}>Already a Member?</p>
+                    <p onClick={toggleForm}>Already a Member?</p>
                 </>
             :
                 <>
@@ -48,8 +54,9 @@ export default function Auth(){
                         handleSubmit={ handleLogin }
                         inputs={inputs}
                         btnText="Login"
+                        errMsg={errMsg}
                     />
-                    <p onClick={() => setToggle(prev => !prev)}>Not a Member Yet?</p> 
+                    <p onClick={toggleForm}>Not a Member Yet?</p> 
                 </>           
             }
         </div>

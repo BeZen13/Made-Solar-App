@@ -22,17 +22,24 @@ export default function App(){
                     exact path="/"
                     render={() => token ? <Redirect to="/LeadTracker" /> : <Auth/>}
                 />
-                <Route
+                <ProtectedRoute
                     path="/Proposals"
-                    render={() => <Proposals />}
+                    component={Proposals}
+                    redirectTo="/"
+                    token={token}
                 />
-                <Route
+                <ProtectedRoute
                     path="/Files"
-                    render={() => <Files />}
+                    component={Files}
+                    redirectTo="/"
+                    token={token}
+
                 />
-                <Route
+                <ProtectedRoute
                     path="/LeadTracker"
-                    render={() => <LeadTracker />}
+                    component={LeadTracker}
+                    redirectTo="/"
+                    token={token}
                 />
             </Switch>
         </div>
