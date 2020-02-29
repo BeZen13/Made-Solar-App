@@ -1,5 +1,8 @@
 import React from 'react'
 
+const storage = firebase.storage()
+const storageRef = storage.ref()
+const 
 
 export default function Files(){
     return(
