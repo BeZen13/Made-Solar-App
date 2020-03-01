@@ -23,6 +23,7 @@ export default function LeadForm(props){
         setInputs(initLeadInputs)
     }
     
+    
     const { name, phone } = inputs
 
     return(

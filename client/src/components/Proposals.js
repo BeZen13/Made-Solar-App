@@ -80,56 +80,61 @@ function RepSheet(props) {
     }
 
     return(
-        <form className="propForm" onSubmit={ handleSubmit }>
-            <input
-                type="text"
-                name="firstName"
-                placeholder="First Name"
-                { ...bindFirstName }
-                required
-            />
-            <input
-                type="text"
-                name="lastName"
-                placeholder="Last Name"
-                { ...bindLastName }
-            />
-            <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                { ...bindEmail }
-                required
-            />
-            <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                { ...bindSubject }
-                required
-            />
-            <input
-                type="phone"
-                name="phone"
-                placeholder="Phone"
-                { ...bindPhone }
-                required
-            />
-            <input
-                type="text"
-                name="location"
-                placeholder="Location"
-                { ...bindLocation }
-                required
-            />
-            <input
-                type="body"
-                name="message"
-                placeholder="Added Info..."
-                { ...bindMessage }
-            />
-            <button type="submit">Submit</button>
-        </form>
+        <div className="proposalPage">
+            <h1>Please enter your Proposal information:</h1>
+        
+        
+            <form onSubmit={ handleSubmit }>
+                <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    { ...bindFirstName }
+                    required
+                />
+                <input
+                    type="text"
+                    name="lastName"
+                    placeholder="Last Name"
+                    { ...bindLastName }
+                />
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    { ...bindEmail }
+                    required
+                />
+                <input
+                    type="text"
+                    name="subject"
+                    placeholder="Subject"
+                    { ...bindSubject }
+                    required
+                />
+                <input
+                    type="phone"
+                    name="phone"
+                    placeholder="Phone"
+                    { ...bindPhone }
+                    required
+                />
+                <input
+                    type="text"
+                    name="location"
+                    placeholder="Location"
+                    { ...bindLocation }
+                    required
+                />
+                <input
+                    type="body"
+                    name="message"
+                    placeholder="Added Info..."
+                    { ...bindMessage }
+                />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
 
     )
 }

@@ -6,6 +6,7 @@
     font-family: sans-serif;
     outline: none;
     text-decoration: none;
+    background-color: skyblue;
 }
 
 .app{
@@ -27,6 +28,7 @@
 }
 
 .auth-container > h1{
+    text-align: center;
     font-size: 2em;
     margin: 24px;
 }
@@ -36,7 +38,7 @@
     padding: 20px;
     border-radius: 5px;
     background-color: lightcoral;
-
+    
     display: flex;
     flex-direction: column;
 }
@@ -45,28 +47,75 @@
     margin: 16px 8px;
     padding: 8px;
     border-radius: 4px;
+    background-color: antiquewhite;
 }
 
 .auth-container > form > button {
     margin: 16px 8px;
     padding: 8px;
     border-radius: 4px;
+    background-color: antiquewhite;
+}
+.leads{
+    margin: 10px;
+    padding: 12px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
+.leadTracker > h1{
+    text-align: center;
+    margin: 8px;
+    font-size: 2em;
+    text-align: center;
+}
+
+.leadTracker > h3{
+    text-align: center;
+    margin: 16px;
+    text-decoration: underline;
+}
+
+.leadTracker > form{
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0;
+    border: 1px solid purple;
+    background-color: lightcoral;
+    padding: 16px;
+    border-radius: 5px;
+}
+
+.leadTracker > form > input,
+.leadTracker > form > button {
+    margin: 24px 0;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: antiquewhite;
+}
+
+.leads-list{
+    text-align: center;
+    margin: 24px;
+}
 
 .propForm{
     display: flex;
     align-items: center;
     flex-direction: column;
     height: 100vh;
+
 }
 
-.propForm > h1{
+.proposalPage> h1{
+    text-align: center;
     font-size: 2em;
     margin: 24px;
 }
 
-.propForm > form {
+.proposalPage > form {
+    margin: 24px;
     border: 1px solid purple;
     padding: 20px;
     border-radius: 5px;
@@ -76,16 +125,24 @@
     flex-direction: column;
 }
 
-.propForm > form > input {
-    margin: 16px 8px;
+.proposalPage > form > input {
+    margin: 20px 8px;
     padding: 8px;
     border-radius: 4px;
+    background-color: antiquewhite;
 }
 
-.propForm > form > button {
-    margin: 16px 8px;
+.proposalPage > form > button {
+    margin: 24px 8px;
     padding: 8px;
     border-radius: 4px;
+    background-color: antiquewhite;
+}
+
+.proposalPage > h1{
+    text-align: center;
+    margin: 24px;
+
 }
 
 .home{
