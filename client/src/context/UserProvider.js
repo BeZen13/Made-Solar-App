@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import axios from 'axios'
-import { ProposalContext } from '../context/ProposalProvider.js'
+//import { ProposalContext } from '../context/ProposalProvider.js'
 
 export const UserContext = React.createContext()
 
@@ -13,7 +13,7 @@ userAxios.interceptors.request.use(config => {
 })
 
 export default function UserProvider(props){
-    const { getUserProposals } = useContext(ProposalContext)
+    //const { getUserProposals } = useContext(ProposalContext)
 
     const initState = {
         user: JSON.parse(localStorage.getItem("user")) || {},
@@ -63,7 +63,7 @@ export default function UserProvider(props){
         setUserState({
             user: {},
             token: "",
-            leads: []
+            leads: [userState.leads]
         })
     }
 
@@ -84,8 +84,8 @@ export default function UserProvider(props){
     function getUserLeads(){
         userAxios.get("/api/lead/user")
             .then(res => {
-                setUserState(prevUserState => ({
-                    ...prevUserState,
+                setUserState(prevState => ({
+                    ...prevState,
                     leads: res.data
                 }))
             })
@@ -102,12 +102,13 @@ export default function UserProvider(props){
             })
             .catch(err => console.log(err.response.data.errMsg))
     }
+    
     function deleteLead(_id){
         userAxios.delete(`/api/lead/${_id}`)
             .then(res => {
                 setUserState(prevState => ({
                     ...prevState,
-                    leads: res.data
+                    leads: []
                 }))
             })
             .catch(err => console.log(err.response.data.errMsg))
