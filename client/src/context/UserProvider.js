@@ -86,7 +86,7 @@ export default function UserProvider(props){
             .then(res => {
                 setUserState(prevState => ({
                     ...prevState,
-                    leads: res.data
+                    leads: res.data  //why is this undefined?
                 }))
             })
             .catch(err => console.log(err.response.data.errMsg))
