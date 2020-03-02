@@ -9,7 +9,7 @@ export default function Leads(props){
         <div className="leads">
             <h1>{ name }</h1>
             <h2>{ phone }</h2>
-            <button onClick={deleteLead}>Delete</button>
+            <button onClick={() => deleteLead(_id)}>Delete</button>
         </div>
     )
 }

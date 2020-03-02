@@ -9,7 +9,12 @@ const leadSchema = new Schema ({
     phone:{
         type: Number,
         require: true
+    },
+    user:{
+        type: Schema.Types.ObjectId,
+        ref: "User"
     }
+
 })
 
 module.exports = mongoose.model("Leads", leadSchema)

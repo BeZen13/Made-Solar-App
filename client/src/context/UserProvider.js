@@ -63,7 +63,7 @@ export default function UserProvider(props){
         setUserState({
             user: {},
             token: "",
-            leads: [userState.leads]
+            leads: []
         })
     }
 
@@ -83,13 +83,13 @@ export default function UserProvider(props){
    
     function getUserLeads(){
         userAxios.get("/api/lead/user")
-            .then(res => {
+            .then(res => { console.log(res.data)
                 setUserState(prevState => ({
                     ...prevState,
-                    leads: res.data  //why is this undefined?
+                    leads: res.data  
                 }))
             })
-            .catch(err => console.log(err.response.data.errMsg))
+            .catch(err => console.log(err))
     }
 
     function addLead(newLead){
@@ -104,12 +104,10 @@ export default function UserProvider(props){
     }
     
     function deleteLead(_id){
+        console.log(_id)
         userAxios.delete(`/api/lead/${_id}`)
             .then(res => {
-                setUserState(prevState => ({
-                    ...prevState,
-                    leads: []
-                }))
+               getUserLeads()
             })
             .catch(err => console.log(err.response.data.errMsg))
     }
@@ -124,6 +122,7 @@ export default function UserProvider(props){
                 logout,
                 addLead,
                 deleteLead,
+                getUserLeads,
                 resetAuthErr
             }}>
                 { props.children }

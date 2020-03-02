@@ -17,12 +17,14 @@ leadsRouter.get("/", (req, res, next) => {
 //get Lead by UserId
 
 leadsRouter.get("/user", (req, res, next) => {
-    leads.find({ user: req.user._id }, (err, lead) => {
+    console.log(req.user._id)
+    Leads.find({ user: req.user._id }, (err, lead) => {
+        console.log(lead)
         if(err){
             res.status(500)
             return next(err)
         }
-        return res.status(500).send(lead)
+        return res.status(200).send(lead)
     })
 })
 
