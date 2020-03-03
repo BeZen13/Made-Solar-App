@@ -20,7 +20,7 @@ export default function App(){
             <Switch>
                 <Route
                     exact path="/"
-                    render={() => token ? <Redirect to="/LeadTracker" /> : <Auth/>}
+                    render={() => token ? <Redirect to="/Files" /> : <Auth/>}
                 />
                 <ProtectedRoute
                     path="/Proposals"
