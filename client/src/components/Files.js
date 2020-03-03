@@ -45,7 +45,14 @@ export default function Files(){
             <p className="stateInfo">{theData.map(dataUno =>
                 <p key={dataUno.i}>{dataUno.name}
                     <h3>Measured in Thousand MegawattHours</h3>
-                    <p>{dataUno.data}</p>
+                <ul>
+                    <li>{dataUno.data[0][0]}: {dataUno.data[0][1]}</li>
+                    <li>{dataUno.data[1][0]}: {dataUno.data[1][1]}</li>
+                    <li>{dataUno.data[2][0]}: {dataUno.data[2][1]}</li>
+                    <li>{dataUno.data[3][0]}: {dataUno.data[3][1]}</li>
+                    <li>{dataUno.data[4][0]}: {dataUno.data[4][1]}</li>
+                    <li>{dataUno.data[5][0]}: {dataUno.data[5][1]}</li>
+                </ul>
 
                 <h3>This was updated: {dataUno.updated}</h3>
                 </p>
