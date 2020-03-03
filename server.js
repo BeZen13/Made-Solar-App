@@ -19,6 +19,13 @@ mongoose.connect(
     () => console.log('You are connected to the Made-Solar-App DB')
 )
 
+app.get('/download', (req, res) => {
+    res.download('./downloads/Fin.pdf');
+  })
+app.get('/download2', (req, res) => {
+    res.download('./downloads/Beg.docx')
+})  
+
 app.use("/send", require("./routes/submitRouter"));
 
 app.use('/auth', require('./routes/authRouter.js'))

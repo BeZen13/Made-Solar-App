@@ -28,6 +28,7 @@ export default function LeadForm(props){
 
     return(
         <form onSubmit={handleSubmit}>
+        
             <input
                 type="text"
                 name="name"
@@ -42,6 +43,7 @@ export default function LeadForm(props){
                 onChange={handleChange}
                 placeholder="Phone"
             />
+            
             <button>Add Lead</button>
         </form>
     )

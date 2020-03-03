@@ -133,6 +133,11 @@ function RepSheet(props) {
                     { ...bindMessage }
                 />
                 <button type="submit">Submit</button>
+                <p style={{
+                    backgroundColor: "lightcoral",
+                    textAlign: "center"
+                }}>This information will be submitted to the Back Office to create a Proposal Build within 48hours!</p>
+            
             </form>
         </div>
 
