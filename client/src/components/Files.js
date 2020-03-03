@@ -16,8 +16,8 @@ export default function Files(){
 
             axios.get(`https://vschool-cors.herokuapp.com?url=http://api.eia.gov/series/?api_key=3823d2b0245a8eddfc5e575f02bd0451&series_id=ELEC.GEN.TSN-${deets}-8.A`)
                 .then(res=> {
-                    console.log(res.data)
-                    setTheData(res.data.response.data)
+                    console.log(res.data.series)
+                    setTheData(res.data.series)
                 })
                 .catch(err => console.log(err))
     
