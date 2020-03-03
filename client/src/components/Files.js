@@ -12,15 +12,16 @@ export default function Files(){
         const deets = stateUsage
             console.log(deets)
             //take state info.
-            // push to axios get request
+            //to axios get request
 
             axios.get(`https://vschool-cors.herokuapp.com?url=http://api.eia.gov/series/?api_key=3823d2b0245a8eddfc5e575f02bd0451&series_id=ELEC.GEN.TSN-${deets}-8.A`)
-                .then(res => {
+                .then(res=> {
+                    console.log(res.data)
                     setTheData(res.data.response.data)
                 })
                 .catch(err => console.log(err))
     
-    }   
+    }  
     
     
     
@@ -28,22 +29,22 @@ export default function Files(){
         <div className="refUno">
             <h1>Welcome to the Rep Ref page!</h1>
 
-            
-            <h2>Please enter the State you'd like Info For</h2>
-            <h3>example (CA, WI, UT)</h3>
+
+            <h2>Please enter the State (in caps) you'd like Info For</h2>
+            <h3>example(CA, WI, UT)</h3>
 
             <input className="stateEntry"
             type="text"
             value={stateUsage}
             placeholder="What state?"
-            onChange={e => setStateUsage(e.target.value) }
+            onChange={e => setStateUsage(e.target.value)}
             />
             <button onClick={clicked} className="find">Find It!</button>
 
             
             <p className="stateInfo">{theData.map(dataUno =>
                 <p key={dataUno.i}>{dataUno.name}
-                    <h3>Measured in Thousand Megawatts</h3>
+                    <h3>Measured in Thousand MegawattHours</h3>
                     <p>{dataUno.data}</p>
 
                 <h3>This was updated: {dataUno.updated}</h3>
