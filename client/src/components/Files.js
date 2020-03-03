@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import solar1 from './solar1.jpg'
 
 
 
@@ -59,6 +60,7 @@ export default function Files(){
                 marginBottom: "20px"
             }}>Find It!</button>
 
+
             
             <p className="stateInfo">{theData.map(dataUno =>
                 <p key={dataUno.i}>{dataUno.name}
@@ -75,6 +77,8 @@ export default function Files(){
                 <h3>This was updated: {dataUno.updated}</h3>
                 </p>
             )}</p>
+
+            <img src={solar1} className="pic"></img>
             
             <footer style={{
                 position: "fixed",

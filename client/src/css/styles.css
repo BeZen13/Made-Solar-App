@@ -151,3 +151,27 @@
     align-items: center;
     height: 100vh;
 }
+@media only screen and (max-width: 1500px)
+{.pic{
+  display: block;
+  height: 450px;
+  width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  border: slateblue solid 15px;
+
+}}
+
+@media only screen and (max-width: 850px)
+{.pic{
+  
+  height: 350px;
+  width: 700px;
+}}
+
+@media only screen and (max-width: 600px)
+{.pic{
+  
+  height: 250px;
+  width: 550px;
+}}
