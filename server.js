@@ -40,7 +40,17 @@ app.use((err, req, res, next) => {
     }
     return res.send({ errMsg: err.message })
 })
+// ... other imports 
+const path = require("path")
 
+// ... other app.use middleware 
+app.use(express.static(path.join(__dirname, "client", "build")))
+
+// ...
+// Right before your app.listen(), add this:
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 app.listen(8888, () => {
     console.log('The Made-Solar-App server is running on local port 8888!')
