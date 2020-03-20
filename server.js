@@ -52,6 +52,6 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
-app.listen(8888, () => {
+app.listen(process.env.PORT || 8888, () => {
     console.log('The Made-Solar-App server is running on local port 8888!')
 })
